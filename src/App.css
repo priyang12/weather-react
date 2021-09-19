@@ -90,6 +90,11 @@ form label {
   color: #f4f4f4;
   background-color: #073b8a;
 }
+.loadingState {
+  color: #062450;
+  font-size: 2rem;
+  font-weight: 900;
+}
 input[type='text'] {
   transition: all 1s ease;
   margin: 1em;
@@ -234,6 +239,9 @@ nav img {
   }
 }
 @media only screen and (max-width: 600px) {
+  input[type='text']:focus {
+    margin: 2em 0;
+  }
   #loader {
     width: 100%;
   }
