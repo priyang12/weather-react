@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const SelectOptions = ({ name, url, setvalue }) => {
   const header = true;
   const { data, loading } = useFetch(url, header);
-
   return loading ? (
     <div className='loadingState'>Loading</div>
   ) : (
@@ -15,7 +14,6 @@ const SelectOptions = ({ name, url, setvalue }) => {
       data-testid='selectoption'
     >
       <option>Select {name}</option>
-
       {data &&
         data.map((coun) => (
           <option value={coun.iso2} key={coun.id}>

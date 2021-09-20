@@ -32,6 +32,7 @@ const GetBylist = ({ setUrl }) => {
           url='https://api.countrystatecity.in/v1/countries'
           setvalue={onChange}
         />
+
         <div className='stick'></div>
         <SelectOptions
           name='State'

@@ -20,7 +20,7 @@ const Display = ({ weatherDetails }) => {
     <section id='main'>
       <div className='container' data-testid='displayWeather'>
         <h1 className='title' id='Weather_status'>
-          {name} | {weather[0].main || 'Not Avaliable'}
+          {name} {weather[0].main || 'Not Avaliable'}
         </h1>
         <div className='row'>
           <div className='col'>

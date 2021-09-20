@@ -29,7 +29,6 @@ export const useFetch = (url, header) => {
         }
       } catch (error) {
         seterror(error.response?.data);
-        console.log(error.response);
         setdata(null);
         setloading(false);
       }

@@ -19,6 +19,7 @@ const GetbyCityname = ({ setUrl }) => {
           type='text'
           id='searchCity'
           name='cityName'
+          aria-label='Cityname'
           onChange={(e) => setcityName(e.target.value)}
         />
       </div>

@@ -27,10 +27,15 @@ const Main = () => {
       )}
       <section id='search' data-testid='InputCity'>
         <div id='ToogleScreen'>
-          <h1>{toggleScreen ? 'By City Name' : 'By List'}</h1>
+          <h1 className={toggleScreen && 'active'}>By City Name</h1>
           <div onClick={ChangeScreen}>
-            <i className='fa fa-refresh' aria-hidden='true'></i>
+            {toggleScreen ? (
+              <i class='fas fa-toggle-off'></i>
+            ) : (
+              <i class='fas fa-toggle-on'></i>
+            )}
           </div>
+          <h1 className={!toggleScreen && 'active'}>By List</h1>
         </div>
         <div className='wetherinput' id='CitySearch'>
           {toggleScreen ? (
