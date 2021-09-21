@@ -329,11 +329,12 @@ nav img {
     color: aliceblue;
     flex-direction: column;
     padding: 0;
+    margin-bottom: 1.5em;
   }
 }
 @media only screen and (max-device-width: 480px) {
   form {
-    height: 150px;
+    height: 300px;
   }
   nav {
     margin: 1em;
