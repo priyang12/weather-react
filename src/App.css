@@ -272,6 +272,7 @@ nav img {
   border: 2px solid #f4f4f4;
   background-color: #214074;
   display: flex;
+  padding: 2em;
   margin-bottom: 3.5em;
 }
 #search #getWeather {
@@ -326,5 +327,6 @@ nav img {
   #search .wetherinput #searchWeather .form-control {
     color: aliceblue;
     flex-direction: column;
+    padding: 0;
   }
 }
