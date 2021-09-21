@@ -331,3 +331,12 @@ nav img {
     padding: 0;
   }
 }
+@media only screen and (max-device-width: 480px) {
+  form {
+    height: 150px;
+  }
+  nav {
+    margin: 1em;
+    padding: 0;
+  }
+}
