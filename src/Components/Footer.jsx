@@ -5,13 +5,13 @@ const Footer = () => {
     <footer>
       <div className='links'>
         <a href='https://github.com/priyang12'>
-          <i class='fab fa-github'></i>
+          <i className='fab fa-github'></i>
         </a>
         <a href='twitter.com'>
-          <i class='fab fa-twitter'></i>
+          <i className='fab fa-twitter'></i>
         </a>
         <a href='https://www.linkedin.com/in/priyang-patel-948685176/'>
-          <i class='fab fa-linkedin'></i>
+          <i className='fab fa-linkedin'></i>
         </a>
       </div>
     </footer>

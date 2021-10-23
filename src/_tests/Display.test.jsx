@@ -71,7 +71,7 @@ describe('weather display property', () => {
     //Details Temp,  pressure, humidity
     const details = weatherDisplay.querySelector('#details');
     expect(details.childNodes[0].textContent).toBe(
-      `Temprature : ${weatherInfo.main.temp}`
+      `Temperature : ${weatherInfo.main.temp}`
     );
     expect(details.childNodes[1].textContent).toBe(
       `Pressure : ${weatherInfo.main.pressure}`

@@ -178,7 +178,7 @@ nav .cloud {
 nav img {
   width: 10rem;
 }
-#ToogleScreen {
+#ToggleScreen {
   display: flex;
   align-items: center;
   color: #1869e2;
@@ -188,13 +188,13 @@ nav img {
   transition: all 1s;
   height: 300px;
 }
-#ToogleScreen > div {
+#ToggleScreen > div {
   margin: 1em;
 }
-#ToogleScreen i {
+#ToggleScreen i {
   cursor: pointer;
 }
-#ToogleScreen .active {
+#ToggleScreen .Active {
   color: rgb(255, 255, 255);
 }
 #main {
@@ -310,7 +310,7 @@ nav img {
     animation: none;
   }
 
-  #ToogleScreen {
+  #ToggleScreen {
     flex-direction: column;
   }
   #main .container .row {

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const GetbyCityname = ({ setUrl }) => {
+const GetByCityName = ({ setUrl }) => {
   const [cityName, setcityName] = useState('');
   const SeachbyCity = (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const GetbyCityname = ({ setUrl }) => {
     </form>
   );
 };
-GetbyCityname.propTypes = {
+GetByCityName.propTypes = {
   setUrl: PropTypes.func.isRequired,
 };
-export default GetbyCityname;
+export default GetByCityName;

@@ -1,21 +1,22 @@
-import { useFetch } from '../Utilis/useFetch';
+import { useFetch } from '../Utils/CustomHook';
 import PropTypes from 'prop-types';
 
-const SelectOptions = ({ name, url, setvalue }) => {
+const SelectOptions = ({ name, url, setValue }) => {
   const header = true;
-  const { data, loading } = useFetch(url, header);
-  return loading ? (
+  const { Data, Loading } = useFetch(url, header);
+
+  return Loading ? (
     <div className='loadingState'>Loading</div>
   ) : (
     <select
       name={name}
       id={name}
-      onChange={setvalue}
+      onChange={setValue}
       data-testid='selectoption'
     >
       <option>Select {name}</option>
-      {data &&
-        data.map((coun) => (
+      {Data &&
+        Data.map((coun) => (
           <option value={coun.iso2} key={coun.id}>
             {coun.name}
           </option>
@@ -27,6 +28,6 @@ const SelectOptions = ({ name, url, setvalue }) => {
 SelectOptions.propTypes = {
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  setvalue: PropTypes.func.isRequired,
+  setValue: PropTypes.func.isRequired,
 };
 export default SelectOptions;

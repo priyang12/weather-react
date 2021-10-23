@@ -1,7 +1,7 @@
 import { Suspense, useState, lazy } from 'react';
 const SelectOptions = lazy(() => import('./SelectOptions'));
 
-const GetBylist = ({ setUrl }) => {
+const GetByList = ({ setUrl }) => {
   const [WeatherPlace, setWeathePlace] = useState({
     Country: '',
     State: '',
@@ -30,20 +30,20 @@ const GetBylist = ({ setUrl }) => {
         <SelectOptions
           name='Country'
           url='https://api.countrystatecity.in/v1/countries'
-          setvalue={onChange}
+          setValue={onChange}
         />
 
         <div className='stick'></div>
         <SelectOptions
           name='State'
           url={`https://api.countrystatecity.in/v1/countries/${Country}/states`}
-          setvalue={onChange}
+          setValue={onChange}
         />
         <div className='stick'></div>
         <SelectOptions
           name='City'
           url={`https://api.countrystatecity.in/v1/countries/${Country}/states/${State}/cities`}
-          setvalue={onChange}
+          setValue={onChange}
         />
       </Suspense>
       <input
@@ -56,4 +56,4 @@ const GetBylist = ({ setUrl }) => {
   );
 };
 
-export default GetBylist;
+export default GetByList;
