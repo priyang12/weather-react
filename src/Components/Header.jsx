@@ -1,7 +1,9 @@
+import styles from '../styles/Components_Modules/Nav.module.scss';
+
 const Header = ({ logo, image }) => {
   return (
     <nav>
-      <div className='logo' data-testid='logoTestid'>
+      <div className={styles.logo} data-testid='logoTestid'>
         <h1>{logo}</h1>
       </div>
       <div className='cloud' data-testid='CloudImage'>

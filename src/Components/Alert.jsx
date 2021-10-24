@@ -1,7 +1,9 @@
+import styles from '../styles/Components_Modules/Alert.module.scss';
+
 const Alert = ({ massage }) => {
   return (
-    <div id='alert'>
-      <p id='alertmsg'>{massage}</p>
+    <div id={styles.alert}>
+      <p id='alertMsg'>{massage}</p>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import styles from '../styles/Components_Modules/Form.module.scss';
+import WeatherStyles from '../styles/Components_Modules/SearchWeather.module.scss';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
@@ -12,8 +14,12 @@ const GetByCityName = ({ setUrl }) => {
     }
   };
   return (
-    <form id='searchWeather' onSubmit={SeachbyCity} data-testid='getbycity'>
-      <div className='form-control'>
+    <form
+      className={styles.form}
+      onSubmit={SeachbyCity}
+      data-testid='getbycity'
+    >
+      <div className={WeatherStyles.CityName}>
         <label htmlFor='City'>Enter City</label>
         <input
           type='text'
@@ -24,7 +30,11 @@ const GetByCityName = ({ setUrl }) => {
         />
       </div>
 
-      <input type='submit' className='btn btn-light' value='Get City Weather' />
+      <input
+        type='submit'
+        className={`btn btn-light ${WeatherStyles.getWeatherBtn}`}
+        value='Get City Weather'
+      />
     </form>
   );
 };

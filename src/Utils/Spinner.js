@@ -6,7 +6,7 @@ const Spinner = () => {
     behavior: 'smooth',
   });
   return (
-    <div id='loader'>
+    <div className='loader'>
       <img src={SpinnerGif} alt='Loading' />
     </div>
   );

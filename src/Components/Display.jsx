@@ -1,4 +1,4 @@
-import React from 'react';
+import styles from '../styles/Components_Modules/Display.module.scss';
 
 const Display = ({ weatherDetails }) => {
   if (!weatherDetails) {
@@ -10,38 +10,38 @@ const Display = ({ weatherDetails }) => {
       <section id='main'>
         <div className='container' data-testid='displayWeather'>
           <h1 className='display' id='Weather_status'>
-            NO DATA AVALIABLE
+            NO DATA AVAILABLE
           </h1>
         </div>
       </section>
     );
   }
   return (
-    <section id='main'>
-      <div className='container' data-testid='displayWeather'>
-        <h1 className='title' id='Weather_status'>
+    <section id={styles.main}>
+      <div className={styles.container} data-testid='displayWeather'>
+        <h1 className={styles.title} id='Weather_status'>
           {name} {weather[0].main || 'Not Available'}
         </h1>
-        <div className='row'>
-          <div className='col'>
+        <div className={styles.row}>
+          <div className={styles.col}>
             <h2 id='description'>
-              Description : {weather[0].description || 'Not Avaliable'}
+              Description : {weather[0].description || 'Not Available'}
             </h2>
-            <ul className='list' id='details'>
-              <li>Temperature : {main.temp || 'Not Avaliable'}</li>
-              <li>Pressure : {main.pressure || 'Not Avaliable'}</li>
-              <li>Humidity : {main.humidity || 'Not Avaliable'}</li>
-              <li>Sea Level : {main.Sea_level || 'Not Avaliable'}</li>
+            <ul className={styles.list} id='details'>
+              <li>Temperature : {main.temp || 'Not Available'}</li>
+              <li>Pressure : {main.pressure || 'Not Available'}</li>
+              <li>Humidity : {main.humidity || 'Not Available'}</li>
+              <li>Sea Level : {main.Sea_level || 'Not Available'}</li>
             </ul>
           </div>
-          <div className='col'>
+          <div className={styles.col}>
             <h2 id='visibility'>
-              visibility : {visibility || 'Not Avaliable'}
+              visibility : {visibility || 'Not Available'}
             </h2>
-            <ul className='list' id='wind'>
-              <li>Speed : {wind?.speed || 'Not Avaliable'}</li>
-              <li>Wind : {wind?.deg || 'Not Avaliable'}</li>
-              <li>Gust : {wind?.gust || 'Not Avaliable'}</li>
+            <ul className={styles.list} id='wind'>
+              <li>Speed : {wind?.speed || 'Not Available'}</li>
+              <li>Wind : {wind?.deg || 'Not Available'}</li>
+              <li>Gust : {wind?.gust || 'Not Available'}</li>
             </ul>
           </div>
         </div>

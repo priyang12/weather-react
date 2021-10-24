@@ -1,0 +1,78 @@
+* {
+  margin: 0rem;
+  padding: 0rem;
+}
+html,
+body {
+  scrollbar-color: #5b40e2 #f2af1b;
+  scrollbar-width: thin;
+}
+body {
+  background-color: #39afea;
+  color: #f4f8fb;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgb(64, 192, 226);
+  background: rgb(91, 64, 226);
+  background: linear-gradient(0deg, #5b40e2 23%, #f2af1b 89%);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(91, 64, 226, 1) 23%,
+    rgba(242, 175, 27, 1) 89%
+  );
+}
+ul {
+  list-style: none;
+}
+.loader {
+  text-align: center;
+}
+
+.cloud {
+  width: 100%;
+  animation: 2s move alternate-reverse infinite linear;
+}
+
+.btn {
+  border: none;
+  font-size: 2rem;
+  padding: 0.5em;
+  transition: all 0.5s;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.btn-light {
+  color: #112b52;
+  background-color: #f4f8fb;
+}
+.btn-dark {
+  color: #f4f4f4;
+  background-color: #073b8a;
+}
+
+/* animation */
+@keyframes move {
+  from {
+    transform: translate3d(70%, 0px, 0px);
+  }
+}
+@media only screen and (max-width: 600px) {
+  #loader {
+    width: 100%;
+  }
+  #loader img {
+    width: 80%;
+  }
+  nav .cloud {
+    display: none;
+    animation: none;
+  }
+}

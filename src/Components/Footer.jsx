@@ -1,9 +1,9 @@
-import React from 'react';
+import styles from '../styles/Components_Modules/Footer.module.scss';
 
 const Footer = () => {
   return (
     <footer>
-      <div className='links'>
+      <div className={styles.links}>
         <a href='https://github.com/priyang12'>
           <i className='fab fa-github'></i>
         </a>

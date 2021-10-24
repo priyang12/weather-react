@@ -1,0 +1,30 @@
+footer {
+  font-size: 2rem;
+  text-align: center;
+  z-index: 0;
+  background-color: #3b6cb6;
+}
+.links {
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+  a {
+    background-color: #fff;
+    border-radius: 50%;
+    color: #1869e2;
+    transition: all 0.5s;
+    i {
+      padding: 1rem;
+    }
+  }
+}
+.links a:hover {
+  background-color: #ecf02a;
+  border-radius: 80%;
+}
+.links a:first-child {
+  color: black;
+}
+.links a:last-child {
+  color: #062450;
+}

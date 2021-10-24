@@ -11,7 +11,7 @@ import Display from './Components/Display';
 import Alert from './Components/Alert';
 import ToggleScreen from './Components/ToggleScreen';
 //Style
-import './App.css';
+import styles from './styles/Components_Modules/SearchWeather.module.scss';
 
 function App() {
   const img = { src: cloud, alt: 'Loading' };
@@ -35,9 +35,9 @@ function App() {
       ) : (
         <Display weatherDetails={Data} />
       )}
-      <section id='search' data-testid='InputCity'>
+      <section className={styles.search} data-testid='InputCity'>
         <ToggleScreen Toggle={Toggle} OnClick={ChangeScreen} />
-        <div className='wetherinput' id='CitySearch'>
+        <div className={styles.container} id='CitySearch'>
           {Toggle ? (
             <GetByCityName setUrl={setUrl} />
           ) : (

@@ -1,0 +1,68 @@
+form {
+  -webkit-appearance: none;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: relative;
+  margin: 2em auto;
+  select {
+    text-align: center;
+    font-weight: bolder;
+    margin: auto;
+    font-size: 1.5rem;
+    padding: 1em 3em;
+    border: 5px dotted #1869e2;
+  }
+  option {
+    background-color: #062450;
+    color: #f4f4f4;
+    text-align: left;
+  }
+  input {
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  label {
+    align-self: center;
+    font-size: 3em;
+  }
+  input[type='text'] {
+    transition: all 1s ease;
+    margin: 1em;
+    font-size: 1.5rem;
+    padding: 0.5em;
+    font-weight: bolder;
+  }
+  input[type='text']:focus {
+    margin: 2em;
+    border: none;
+  }
+}
+.stick {
+  width: 1px;
+  margin: 0 auto;
+  height: 5rem;
+  border: 2px solid #f4f8fb;
+  background-color: #f4f8fb;
+  transition: 1s linear;
+}
+.loading {
+  color: #062450;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    select {
+      width: 70%;
+      padding: 0.5rem;
+    }
+    input[type='text']:focus {
+      margin: 2em 0;
+    }
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  form {
+    height: 300px;
+  }
+}
