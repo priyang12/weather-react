@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const useFetch = (url, header) => {
   const [Loading, setLoading] = useState(false);
@@ -9,12 +9,12 @@ export const useFetch = (url, header) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (url !== '') {
+        if (url !== "") {
           setLoading(true);
           if (header) {
             const { data } = await axios.get(`${url}`, {
               headers: {
-                'X-CSCAPI-KEY': `${process.env.REACT_APP_CountryAPIkey}`,
+                "X-CSCAPI-KEY": `${process.env.REACT_APP_CountryAPIkey}`,
               },
             });
             setData(data);
@@ -22,11 +22,11 @@ export const useFetch = (url, header) => {
             const { data } = await axios.get(url);
             setData(data);
           }
-          console.log('API CALL');
+
           setError(null);
         }
       } catch (Error) {
-        const ErrMessage = 'Server Error';
+        const ErrMessage = "Server Error";
         setError(Error.Response?.Data.message || ErrMessage);
         setData(null);
       } finally {
@@ -37,7 +37,7 @@ export const useFetch = (url, header) => {
     };
     fetchData();
   }, [url, header]);
-  console.log(Data);
+
   return { Loading, Data, Error };
 };
 
