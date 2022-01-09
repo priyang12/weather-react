@@ -31,14 +31,14 @@ REACT_APP_weatherkey =(https://openweathermap.org/api)
 
 ## ScreenShots
 
-[!Home](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.16.16%20PM.png)
+![Home](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.16.16%20PM.png)
 
-[!CityName"](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.16.27%20PM.png)
+![CityName](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.16.27%20PM.png)
 
-[!Country-state-city"](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.16.40%20PM.png)
+![Country-state-city](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.16.40%20PM.png)
 
-[!WeatherData"](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.17.01%20PM.png)
+![WeatherData](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.17.01%20PM.png)
 
-[!Resposive-1"](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.17.38%20PM.png)
+![Resposive-1](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.17.38%20PM.png)
 
-[!Resposive-1"](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.18.02%20PM.png)
+![Resposive-1](https://github.com/priyang12/weather-react/blob/master/ScreenShot/Screenshot%202022-01-09%20at%208.18.02%20PM.png)
