@@ -1,6 +1,6 @@
 import styles from "../styles/Components_Modules/Display.module.scss";
 
-const Display = ({ weatherDetails }) => {
+const Display = ({ weatherDetails }: any) => {
   if (!weatherDetails) {
     return null;
   }

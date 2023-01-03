@@ -3,9 +3,11 @@ import WeatherStyles from '../styles/Components_Modules/SearchWeather.module.scs
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const GetByCityName = ({ setUrl }) => {
+const GetByCityName = ({
+  setUrl
+}: any) => {
   const [cityName, setcityName] = useState('');
-  const SeachbyCity = (e) => {
+  const SeachbyCity = (e: any) => {
     e.preventDefault();
     if (cityName !== '') {
       setUrl(

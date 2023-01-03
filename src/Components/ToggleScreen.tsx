@@ -1,6 +1,9 @@
 import styles from '../styles/Components_Modules/Toggle.module.scss';
 
-const ToggleScreen = ({ Toggle, OnClick }) => {
+const ToggleScreen = ({
+  Toggle,
+  OnClick
+}: any) => {
   return (
     <section className={styles.ToggleScreen}>
       <h1 className={Toggle ? styles.Active : 'NonActive'}>By City Name</h1>

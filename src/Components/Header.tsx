@@ -1,6 +1,9 @@
 import styles from '../styles/Components_Modules/Nav.module.scss';
 
-const Header = ({ logo, image }) => {
+const Header = ({
+  logo,
+  image
+}: any) => {
   return (
     <nav>
       <div className={styles.logo} data-testid='logoTestid'>

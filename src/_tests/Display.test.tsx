@@ -1,6 +1,6 @@
-import Display from '../Components/Display';
-import '@testing-library/jest-dom/extend-expect';
-import { screen, render } from '@testing-library/react';
+import Display from "../Components/Display";
+import "@testing-library/jest-dom/extend-expect";
+import { screen, render } from "@testing-library/react";
 
 // Dummy weather data
 const weatherInfo = {
@@ -11,12 +11,12 @@ const weatherInfo = {
   weather: [
     {
       id: 501,
-      main: 'Rain',
-      description: 'moderate rain',
-      icon: '10n',
+      main: "Rain",
+      description: "moderate rain",
+      icon: "10n",
     },
   ],
-  base: 'stations',
+  base: "stations",
   main: {
     temp: 301.14,
     feels_like: 305.69,
@@ -31,7 +31,7 @@ const weatherInfo = {
     deg: 210,
   },
   rain: {
-    '1h': 2.1,
+    "1h": 2.1,
   },
   clouds: {
     all: 40,
@@ -40,36 +40,36 @@ const weatherInfo = {
   sys: {
     type: 1,
     id: 9071,
-    country: 'IN',
+    country: "IN",
     sunrise: 1630803205,
     sunset: 1630848109,
   },
   timezone: 19800,
   id: 1255364,
-  name: 'Surat',
+  name: "Surat",
   cod: 200,
 };
 
-describe('weather display property', () => {
-  let weatherDisplay;
+describe("weather display property", () => {
+  let weatherDisplay: any;
   beforeEach(() => {
     render(<Display weatherDetails={weatherInfo} />);
-    weatherDisplay = screen.getByTestId('displayWeather');
+    weatherDisplay = screen.getByTestId("displayWeather");
   });
-  it('weather value check', () => {
+  it("weather value check", () => {
     //Status
-    const weatherStatus = weatherDisplay.querySelector('#Weather_status');
+    const weatherStatus = weatherDisplay.querySelector("#Weather_status");
     expect(weatherStatus.textContent).toBe(
       `${weatherInfo.name} | ${weatherInfo.weather[0].main}`
     );
     //Desc
-    const description = weatherDisplay.querySelector('#description');
+    const description = weatherDisplay.querySelector("#description");
     expect(description.textContent).toBe(
       `Description : ${weatherInfo.weather[0].description}`
     );
 
     //Details Temp,  pressure, humidity
-    const details = weatherDisplay.querySelector('#details');
+    const details = weatherDisplay.querySelector("#details");
     expect(details.childNodes[0].textContent).toBe(
       `Temperature : ${weatherInfo.main.temp}`
     );
@@ -80,18 +80,20 @@ describe('weather display property', () => {
       `Humidity : ${weatherInfo.main.humidity}`
     );
   });
-  it('Check it for Not Avaliable Fallback', () => {
-    const details = weatherDisplay.querySelector('#details');
+  it("Check it for Not Avaliable Fallback", () => {
+    const details = weatherDisplay.querySelector("#details");
     expect(details.childNodes[3].textContent).toBe(`Sea Level : Not Avaliable`);
   });
 });
 
-describe('check for Fail Values', () => {
-  it('check for null values fallback', () => {
-    const newInfo = delete weatherInfo['weather'];
+describe("check for Fail Values", () => {
+  it("check for null values fallback", () => {
+    // @ts-expect-error TS(2790): The operand of a 'delete' operator must be optiona... Remove this comment to see the full error message
+    const newInfo = delete weatherInfo["weather"];
     render(<Display weatherDetails={newInfo} />);
-    const weatherDisplay = screen.getByTestId('displayWeather');
-    const status = weatherDisplay.querySelector('#Weather_status');
+    const weatherDisplay = screen.getByTestId("displayWeather");
+    const status = weatherDisplay.querySelector("#Weather_status");
+    // @ts-expect-error TS(2531): Object is possibly 'null'.
     expect(status.textContent).toMatch(/NO DATA/);
   });
 });

@@ -4,7 +4,7 @@ import WeatherStyles from "../styles/Components_Modules/SearchWeather.module.scs
 
 const SelectOptions = lazy(() => import("./SelectOptions"));
 
-const GetByList = ({ setUrl }) => {
+const GetByList = ({ setUrl }: any) => {
   const [WeatherPlace, setWeathePlace] = useState({
     Country: "",
     State: "",
@@ -12,12 +12,12 @@ const GetByList = ({ setUrl }) => {
   });
   const { Country, State, City } = WeatherPlace;
 
-  const onChange = (e) => {
+  const onChange = (e: any) => {
     const { name, value } = e.target;
     setWeathePlace({ ...WeatherPlace, [name]: value });
   };
 
-  const WeatherBylist = (e) => {
+  const WeatherBylist = (e: any) => {
     e.preventDefault();
     if (Country !== "" || State !== "" || City !== "") {
       //Set URL

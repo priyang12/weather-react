@@ -5,8 +5,8 @@ import Cloud from '../image/cloud-min.png';
 
 describe('Header Componet Working', () => {
   let getbyId;
-  let logo;
-  let CloudImage;
+  let logo: any;
+  let CloudImage: any;
   const image = {
     src: Cloud,
     alt: 'Weather Logo',

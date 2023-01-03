@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const useFetch = (url, header) => {
+export const useFetch = (url: any, header: any) => {
   const [Loading, setLoading] = useState(false);
   const [Data, setData] = useState(null);
   const [Error, setError] = useState(null);
@@ -27,6 +27,7 @@ export const useFetch = (url, header) => {
         }
       } catch (Error) {
         const ErrMessage = "Server Error";
+        // @ts-expect-error TS(2571): Object is of type 'unknown'.
         setError(Error.Response?.Data.message || ErrMessage);
         setData(null);
       } finally {
@@ -41,10 +42,10 @@ export const useFetch = (url, header) => {
   return { Loading, Data, Error };
 };
 
-export const useToggle = (initialState) => {
+export const useToggle = (initialState: any) => {
   const [Toggle, setToggle] = useState(initialState);
   const ToggleState = () => {
-    setToggle((cu) => !cu);
+    setToggle((cu: any) => !cu);
   };
   return { Toggle, ToggleState };
 };

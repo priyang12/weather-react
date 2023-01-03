@@ -1,22 +1,22 @@
-import { Fragment, useState } from 'react';
-import { useFetch, useToggle } from './Utils/CustomHook';
-//Components
-import Header from './Components/Header';
-import cloud from './image/cloud-min.png';
-import Footer from './Components/Footer';
-import GetByCityName from './Components/GetByCityName';
-import GetByList from './Components/GetByList';
-import Spinner from './Utils/Spinner';
-import Display from './Components/Display';
-import Alert from './Components/Alert';
-import ToggleScreen from './Components/ToggleScreen';
+import { Fragment, useState } from "react";
+import { useFetch, useToggle } from "./Utils/CustomHook";
+import Header from "./Components/Header";
+import cloud from "./image/cloud-min.png";
+import Footer from "./Components/Footer";
+import GetByCityName from "./Components/GetByCityName";
+import GetByList from "./Components/GetByList";
+import Spinner from "./Components/Spinner";
+import Display from "./Components/Display";
+import Alert from "./Components/Alert";
+import ToggleScreen from "./Components/ToggleScreen";
 //Style
-import styles from './styles/Components_Modules/SearchWeather.module.scss';
+import styles from "./styles/Components_Modules/SearchWeather.module.scss";
 
 function App() {
-  const img = { src: cloud, alt: 'Loading' };
+  const img = { src: cloud, alt: "Loading" };
 
-  const [Url, setUrl] = useState('');
+  const [Url, setUrl] = useState("");
+  // @ts-expect-error TS(2554): Expected 2 arguments, but got 1.
   const { Loading, Error, Data } = useFetch(Url);
 
   const { Toggle, ToggleState } = useToggle(true);
@@ -27,17 +27,17 @@ function App() {
 
   return (
     <Fragment>
-      <Header logo='Weather' image={img} />
+      <Header logo="Weather" image={img} />
       {Loading ? (
         <Spinner />
       ) : Error ? (
-        <Alert massage='UNFORTUNATELY 😕NO WEATHER DATA FOUND' />
+        <Alert massage="UNFORTUNATELY 😕NO WEATHER DATA FOUND" />
       ) : (
         <Display weatherDetails={Data} />
       )}
-      <section className={styles.search} data-testid='InputCity'>
+      <section className={styles.search} data-testid="InputCity">
         <ToggleScreen Toggle={Toggle} OnClick={ChangeScreen} />
-        <div className={styles.container} id='CitySearch'>
+        <div className={styles.container} id="CitySearch">
           {Toggle ? (
             <GetByCityName setUrl={setUrl} />
           ) : (
