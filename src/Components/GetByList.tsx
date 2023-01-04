@@ -12,13 +12,17 @@ const GetByList = ({ setUrl }: any) => {
   });
   const { Country, State, City } = WeatherPlace;
 
-  const onChange = (e: any) => {
-    const { name, value } = e.target;
+  const onChange = (val: any) => {
+    console.log(val);
+
+    const { name, value } = val;
     setWeathePlace({ ...WeatherPlace, [name]: value });
   };
 
   const WeatherBylist = (e: any) => {
     e.preventDefault();
+    console.log(WeatherPlace);
+
     if (Country !== "" || State !== "" || City !== "") {
       //Set URL
       setUrl(

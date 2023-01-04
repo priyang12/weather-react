@@ -1,36 +1,43 @@
-import { useFetch } from '../Utils/CustomHook';
-import PropTypes from 'prop-types';
+import { useFetch } from "../Utils/CustomHook";
+import Select from "react-select";
 
-const SelectOptions = ({
-  name,
-  url,
-  setValue
-}: any) => {
+const SelectOptions = ({ name, url, setValue }: any) => {
   const header = true;
   const { Data, Loading } = useFetch(url, header);
-
-  return Loading ? (
-    <div className='loadingState'>Loading</div>
+  return Loading && !Data ? (
+    <div className="loadingState">Loading</div>
   ) : (
-    <select
-      name={name}
-      id={name}
-      onChange={setValue}
-      data-testid='selectoption'
-    >
-      <option>Select {name}</option>
-      {Data &&
-        // @ts-expect-error TS(2339): Property 'map' does not exist on type 'never'.
-        Data.map((coun: any) => <option value={coun.iso2} key={coun.id}>
-          {coun.name}
-        </option>)}
-    </select>
+    <>
+      <Select
+        data-testid="selectoption"
+        onChange={(e: any) => setValue({ name, value: e.value })}
+        options={Data?.map((item: any) => {
+          return {
+            value: name !== "City" ? item.iso2 : item.name,
+            label: item.name,
+          };
+        })}
+        styles={{
+          control: (styles) => ({
+            ...styles,
+            textAlign: "center",
+            fontWeight: "bolder",
+            margin: "auto",
+            fontSize: "1.5rem",
+            Border: "5px dotted #1869e2",
+          }),
+          option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+            return {
+              ...styles,
+              backgroundColor: "#062450",
+              Color: "#f4f4f4",
+              textAlign: "left",
+            };
+          },
+        }}
+      />
+    </>
   );
 };
 
-SelectOptions.propTypes = {
-  name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  setValue: PropTypes.func.isRequired,
-};
 export default SelectOptions;

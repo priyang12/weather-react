@@ -16,9 +16,7 @@ function App() {
   const img = { src: cloud, alt: "Loading" };
 
   const [Url, setUrl] = useState("");
-  // @ts-expect-error TS(2554): Expected 2 arguments, but got 1.
   const { Loading, Error, Data } = useFetch(Url);
-
   const { Toggle, ToggleState } = useToggle(true);
 
   const ChangeScreen = () => {

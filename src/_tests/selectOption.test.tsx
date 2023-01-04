@@ -8,7 +8,6 @@ describe("Select option", () => {
     const setvalue = jest.fn();
     const name = "country";
     const url = "";
-    // @ts-expect-error TS(2322): Type '{ setvalue: Mock<any, any>; name: string; ur... Remove this comment to see the full error message
     render(<SelectOptions setvalue={setvalue} name={name} url={url} />);
     const container = screen.getByTestId("selectoption");
     expect(container).toBeInTheDocument();
@@ -17,7 +16,6 @@ describe("Select option", () => {
     const setvalue = jest.fn();
     const name = "country";
     const url = "";
-    // @ts-expect-error TS(2322): Type '{ setvalue: Mock<any, any>; name: string; ur... Remove this comment to see the full error message
     render(<SelectOptions setvalue={setvalue} name={name} url={url} />);
     const container = screen.getByTestId("selectoption");
     fireEvent.change(container, { target: { value: 0 } });
@@ -28,7 +26,6 @@ describe("Select option", () => {
     const name = "country";
     const url = "";
     act(() => {
-      // @ts-expect-error TS(2322): Type '{ setvalue: Mock<any, any>; name: string; ur... Remove this comment to see the full error message
       render(<SelectOptions setvalue={setvalue} name={name} url={url} />);
       const container = screen.getByTestId("selectoption");
       console.log(container.innerHTML);
